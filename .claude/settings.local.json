@@ -9,7 +9,8 @@
       "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/git/trees/main?recursive=1\")",
       "Bash(curl:*)",
       "Bash(cd:*)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "Bash(find C:UserscorenDocumentsIUTBUT3S5QualiteDeDeveloppementTPGraphics-A1corentin-legrand-portfolio -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js -o -name *.css \\\\\\))"
     ]
   }
 }

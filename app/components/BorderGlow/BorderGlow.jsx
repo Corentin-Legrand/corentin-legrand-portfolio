@@ -3,7 +3,7 @@ import './BorderGlow.css';
 
 function parseHSL(hslStr) {
   const match = hslStr.match(/([\d.]+)\s*([\d.]+)%?\s*([\d.]+)%?/);
-  if (!match) return { h: 160, s: 60, l: 35 };
+  if (!match) return { h: 35, s: 82, l: 89 };
   return { h: parseFloat(match[1]), s: parseFloat(match[2]), l: parseFloat(match[3]) };
 }
 
@@ -52,14 +52,14 @@ const BorderGlow = ({
   children,
   className = '',
   edgeSensitivity = 30,
-  glowColor = '160 60 35',
-  backgroundColor = '#F7E7CE',
+  glowColor = '35 82 89',
+  backgroundColor = '#1a4a3a',
   borderRadius = 12,
   glowRadius = 40,
   glowIntensity = 1.0,
   coneSpread = 25,
   animated = false,
-  colors = ['#2d7a5f', '#c8955a', '#4aaa84'],
+  colors = ['#f5d8a8', '#c8955a', '#f0c890'],
   fillOpacity = 0.3,
 }) => {
   const cardRef = useRef(null);

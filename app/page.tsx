@@ -21,7 +21,7 @@ export default function Home() {
         <PixelBlast
           variant="square"
           pixelSize={4}
-          color="#1a4a3a"
+          color="#F7E7CE"
           patternScale={2}
           patternDensity={1}
           pixelSizeJitter={0}
@@ -52,15 +52,15 @@ export default function Home() {
       </nav>
       <div className="z-10 hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-forest/0 via-forest/40 to-forest/0" />
 
-      <h1 className="py-3.5 px-4 z-10 text-4xl text-forest duration-1000 cursor-default animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap" style={{ background: 'radial-gradient(ellipse at center, rgb(247 231 206 / 60%) 30%, rgb(247 231 206 / 0%) 80%)', borderRadius: '9999px', padding: '1rem 3rem' }}>
+      <h1 className="py-3.5 px-4 z-10 text-4xl text-forest duration-1000 cursor-default animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap" style={{ background: 'radial-gradient(ellipse at center, rgb(26 74 58 / 60%) 30%, rgb(26 74 58 / 0%) 80%)', borderRadius: '9999px', padding: '1rem 3rem' }}>
         Corentin Legrand
       </h1>
-      <p className="z-10 text-xl text-forest animate-fade-in sm:text-2xl md:text-3xl font-display mt-2" style={{ background: 'radial-gradient(ellipse at center, rgb(247 231 206 / 55%) 30%, rgb(247 231 206 / 0%) 80%)', borderRadius: '9999px', padding: '0.5rem 2.5rem' }}>
+      <p className="z-10 text-xl text-forest animate-fade-in sm:text-2xl md:text-3xl font-display mt-2" style={{ background: 'radial-gradient(ellipse at center, rgb(26 74 58 / 55%) 30%, rgb(26 74 58 / 0%) 80%)', borderRadius: '9999px', padding: '0.5rem 2.5rem' }}>
         Créer, développer, optimiser.
       </p>
 
       <div className="z-10 hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-forest/0 via-forest/40 to-forest/0" />
-      <div className="z-10 my-16 text-center animate-fade-in" style={{ background: 'linear-gradient(to bottom, rgb(247 231 206 / 0%) 0%, rgb(247 231 206 / 100%) 30%, rgb(247 231 206 / 100%) 70%, rgb(247 231 206 / 0%) 100%)', borderRadius: '9999px', padding: '1rem 2.5rem' }}>
+      <div className="z-10 my-16 text-center animate-fade-in" style={{ background: 'linear-gradient(to bottom, rgb(26 74 58 / 0%) 0%, rgb(26 74 58 / 100%) 30%, rgb(26 74 58 / 100%) 70%, rgb(26 74 58 / 0%) 100%)', borderRadius: '9999px', padding: '1rem 2.5rem' }}>
         <h2 className="text-sm text-forest">
             Cette plateforme a été conçue pour rassembler les projets sur lesquels j'ai travaillé et mettre en avant mes compétences techniques.
         </h2>

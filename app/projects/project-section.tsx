@@ -35,7 +35,7 @@ export const ProjectExplorer: React.FC<ProjectExplorerProps> = ({ sections }) =>
 						>
 							<div className="h-32 flex items-end">
 								<Folder
-									color="#1a4a3a"
+									color="#F7E7CE"
 									size={1.5}
 									open={isOpen}
 								/>
