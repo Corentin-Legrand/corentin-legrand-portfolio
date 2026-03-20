@@ -52,6 +52,20 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 						{project.description}
 					</p>
 				</div>
+
+				{/* Tags mineurs */}
+				{project.tagMineurs && project.tagMineurs.length > 0 && (
+					<div className="px-5 pb-4 md:px-8 md:pb-6 pt-0 flex flex-wrap gap-2 border-t border-forest/10 mt-auto pt-3">
+						{project.tagMineurs.map((tag: string) => (
+							<span
+								key={tag}
+								className="px-2 py-0.5 text-xs rounded-full border border-forest/20 text-forest/70"
+							>
+								{tag}
+							</span>
+						))}
+					</div>
+				)}
 			</article>
 		</Link>
 	);
