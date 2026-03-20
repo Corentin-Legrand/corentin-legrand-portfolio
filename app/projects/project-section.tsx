@@ -30,7 +30,7 @@ export const ProjectExplorer: React.FC<ProjectExplorerProps> = ({ sections }) =>
 					return (
 						<div
 							key={section.tag}
-							className="flex flex-col items-center gap-4 cursor-pointer select-none"
+							className="flex flex-col items-center gap-6 cursor-pointer select-none"
 							onClick={() => handleSelect(section.tag)}
 						>
 							<div className="h-32 flex items-end">
