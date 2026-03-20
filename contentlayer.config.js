@@ -42,6 +42,14 @@ export const Project = defineDocumentType(() => ({
 		repository: {
 			type: "string",
 		},
+		tagMajeur: {
+			type: "enum",
+			options: ["Web", "Logiciel", "IA / Algo", "Mobile", "DevOps", "Jeu"],
+		},
+		tagMineurs: {
+			type: "list",
+			of: { type: "string" },
+		},
 	},
 	computedFields,
 }));
