@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         height: 1080,
       },
     ],
-    locale: "en-US",
+    locale: "fr-FR",
     type: "website",
   },
   robots: {
@@ -61,12 +61,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html lang="fr" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        className={`bg-cream ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
         {children}

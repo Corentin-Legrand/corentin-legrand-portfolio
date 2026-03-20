@@ -10,9 +10,29 @@ module.exports = {
 
 	theme: {
 		extend: {
+			colors: {
+				cream: "#F7E7CE",
+				forest: "#1a4a3a",
+			},
 			typography: {
 				DEFAULT: {
 					css: {
+						"--tw-prose-body": "#1a4a3a",
+						"--tw-prose-headings": "#1a4a3a",
+						"--tw-prose-lead": "#1a4a3a99",
+						"--tw-prose-links": "#1a4a3a",
+						"--tw-prose-bold": "#1a4a3a",
+						"--tw-prose-counters": "#1a4a3a66",
+						"--tw-prose-bullets": "#1a4a3a66",
+						"--tw-prose-hr": "#1a4a3a40",
+						"--tw-prose-quotes": "#1a4a3a",
+						"--tw-prose-quote-borders": "#1a4a3a40",
+						"--tw-prose-captions": "#1a4a3a99",
+						"--tw-prose-code": "#1a4a3a",
+						"--tw-prose-pre-code": "#F7E7CE",
+						"--tw-prose-pre-bg": "#1a4a3a",
+						"--tw-prose-th-borders": "#1a4a3a40",
+						"--tw-prose-td-borders": "#1a4a3a20",
 						"code::before": {
 							content: '""',
 						},
