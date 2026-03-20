@@ -1,9 +1,9 @@
-import Link from "next/link";
 import React from "react";
 import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
+import { ProjectExplorer } from "./project-section";
 import { Redis } from "@upstash/redis";
 import { TagMajeur } from "@/util/tags";
 
@@ -28,7 +28,6 @@ export default async function ProjectsPage() {
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
     );
 
-  // Groupe les projets par tagMajeur en respectant l'ordre de l'enum
   const sections = Object.values(TagMajeur)
     .map((tag) => ({
       tag,
@@ -36,8 +35,28 @@ export default async function ProjectsPage() {
     }))
     .filter((s) => s.projects.length > 0);
 
-  // Projets sans tag
   const sansTag = published.filter((p) => !p.tagMajeur);
+
+  const allSections = [
+    ...sections.map((s) => ({
+      tag: s.tag,
+      children: s.projects.map((project) => (
+        <Card key={project.slug}>
+          <Article project={project} views={views[project.slug] ?? 0} />
+        </Card>
+      )),
+    })),
+    ...(sansTag.length > 0
+      ? [{
+          tag: "Autres",
+          children: sansTag.map((project) => (
+            <Card key={project.slug}>
+              <Article project={project} views={views[project.slug] ?? 0} />
+            </Card>
+          )),
+        }]
+      : []),
+  ];
 
   return (
     <div className="relative pb-16">
@@ -55,39 +74,7 @@ export default async function ProjectsPage() {
 
         <div className="w-full h-0.5 bg-forest/20" />
 
-        {sections.map((section, i) => (
-          <section key={section.tag}>
-            <h3 className="text-xl font-semibold text-forest font-display mb-6">
-              {section.tag}
-            </h3>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {section.projects.map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
-                </Card>
-              ))}
-            </div>
-            {i < sections.length - 1 && (
-              <div className="w-full h-0.5 bg-forest/20 mt-16" />
-            )}
-          </section>
-        ))}
-
-        {sansTag.length > 0 && (
-          <section>
-            {sections.length > 0 && <div className="w-full h-0.5 bg-forest/20 mb-16" />}
-            <h3 className="text-xl font-semibold text-forest font-display mb-6">
-              Autres
-            </h3>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {sansTag.map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
-                </Card>
-              ))}
-            </div>
-          </section>
-        )}
+        <ProjectExplorer sections={allSections} />
 
       </div>
     </div>
