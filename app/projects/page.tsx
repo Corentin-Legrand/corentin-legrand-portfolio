@@ -68,7 +68,7 @@ export default async function ProjectsPage() {
             Projets
           </h2>
           <p className="mt-4 text-forest/60">
-            Certains projets sont réalisés dans un cadre professionnel, d'autres sur mon temps libre.
+            Certains projets sont réalisés dans un cadre professionnel ou scolaire, d'autres sur mon temps libre.
           </p>
         </div>
 
