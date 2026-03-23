@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import dynamic from "next/dynamic";
+import GlareHover from "./components/GlareHover/GlareHover";
 
 const PixelBlast = dynamic(() => import("./components/PixelBlast/PixelBlast"), {
   ssr: false,
@@ -40,13 +41,26 @@ export default function Home() {
       <nav className="z-10 my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-6">
           {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="px-5 py-2 text-sm font-medium duration-500 rounded-full border-2 border-forest/30 bg-cream text-forest hover:bg-forest hover:text-cream"
-            >
-              {item.name}
-            </Link>
+            <li key={item.href} className="list-none">
+              <Link href={item.href}>
+                <GlareHover
+                  width="auto"
+                  height="auto"
+                  background="#1a4a3a"
+                  borderRadius="9999px"
+                  borderColor="rgba(247, 231, 206, 0.3)"
+                  glareColor="#F7E7CE"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                  style={{ padding: '0.5rem 1.25rem' }}
+                >
+                  <span className="text-sm font-medium text-forest">{item.name}</span>
+                </GlareHover>
+              </Link>
+            </li>
           ))}
         </ul>
       </nav>
