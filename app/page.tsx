@@ -5,7 +5,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import GlareHover from "./components/GlareHover/GlareHover";
 
-const PixelBlast = dynamic(() => import("./components/PixelBlast/PixelBlast"), {
+const GameOfLife = dynamic(() => import("./components/GameOfLife/GameOfLife"), {
   ssr: false,
 });
 
@@ -17,26 +17,15 @@ const navigation = [
 export default function Home() {
   return (
     <div className="relative flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-cream">
-      {/* Arrière-plan PixelBlast */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'auto', opacity: 0.6 }}>
-        <PixelBlast
-          variant="square"
-          pixelSize={4}
-          color="#F7E7CE"
-          patternScale={2}
-          patternDensity={1}
-          pixelSizeJitter={0}
-          enableRipples
-          rippleSpeed={0.4}
-          rippleThickness={0.12}
-          rippleIntensityScale={1.5}
-          liquid={false}
-          speed={0.5}
-          edgeFade={0.25}
-          transparent
-          style={{ width: '100%', height: '100%' }}
-        />
-      </div>
+      {/* Arrière-plan Game of Life */}
+      <GameOfLife
+        cellSize={6}
+        color="#F7E7CE"
+        speed={120}
+        edgeFade={0.15}
+        initialDensity={0.08}
+        style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'auto', opacity: 0.6 }}
+      />
 
       <nav className="z-10 my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-6">
